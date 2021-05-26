@@ -31,3 +31,5 @@ const errorHandler = (err,req,res, next)=>{
 }
 
 module.exports = errorHandler;
+
+//used to handle specific errors.
