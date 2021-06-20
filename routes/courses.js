@@ -8,10 +8,9 @@ const {
     
 } = require('../controllers/courses');
 
-const {protect,authorize} = require('../middleware/auth');
-
-
 const Course = require('../models/Course');
+
+const {protect,authorize} = require('../middleware/auth');
 const advancedResults = require('../middleware/advancedResults');
 
 const router = express.Router({mergeParams:true});

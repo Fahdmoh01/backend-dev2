@@ -9,19 +9,23 @@ const {
     bootcampPhotoUpload
 } = require('../controllers/bootcamps')
 
-const {protect, authorize} = require('../middleware/auth');
 
 const Bootcamp = require('../models/Bootcamp');
+
+const {protect, authorize} = require('../middleware/auth');
 const advancedResults = require('../middleware/advancedResults');
 
 //Include other resource routers 
 const courseRouter = require('./courses');
+const reviewRouter = require('./reviews');
 
 //All routes begins with /api/v1/bootcamps which has been mounted in server.js
 const router = express.Router();
 
 //re-route into other resource routers
 router.use('/:bootcampId/courses', courseRouter);
+router.use('/:bootcampId/reviews', reviewRouter);
+
 
 
 router

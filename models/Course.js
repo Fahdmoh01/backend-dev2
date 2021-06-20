@@ -36,8 +36,14 @@ const CourseSchema = new mongoose.Schema({
             ref:'Bootcamp',
             required:true
             //ref is to reference which model we are drawing a relationship with/to.
-        }
-})
+        },
+        user:{
+          type:mongoose.Schema.ObjectId,
+          ref:'User',
+          required:true
+          //ref is to reference which model we are drawing a relationship with/to.
+      }
+});
 
 // Static method to get avg of course tuitions
 CourseSchema.statics.getAverageCost = async function(bootcampId) {

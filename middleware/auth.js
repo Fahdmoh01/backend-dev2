@@ -14,10 +14,13 @@ exports.protect = asyncHandler(async (req, res, next) => {
     // Set token from Bearer token in header
     token = req.headers.authorization.split(' ')[1];
     // Set token from cookie
-  }
-  // else if (req.cookies.token) {
-  //   token = req.cookies.token;
-  // }
+  } 
+  //else if (req.cookies.token) {
+  //    token = req.cookies.token;
+     //this allows the protection of routes to be done with cookies instead of headers.
+     //it's upto to you to allow the protection to be done headers or cookies.
+     //initially this block was commented out for the Bearer Token only to be used for the route protection.
+  //  }
 
   // Make sure token exists
   if (!token) {

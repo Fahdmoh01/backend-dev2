@@ -98,6 +98,12 @@ const BootcampSchema = new mongoose.Schema({
     createdAt:{
         type:Date,
         default:Date.now
+    },
+    user:{
+        type:mongoose.Schema.ObjectId,
+        ref:'user',
+        required:true
+        //ref is to reference which model we are drawing a relationship with/to.
     }
 
 },{
